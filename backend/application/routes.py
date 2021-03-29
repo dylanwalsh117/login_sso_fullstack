@@ -35,7 +35,7 @@ class UserByEmail(Resource):
                 if bcrypt.check_password_hash(User.objects(email=data['email'])[0].password, data['password']):
                     token = create_access_token(identity=data['email'])
                     print(token)
-                    return jsonify({'response': 'Login Successful!', 'login': True})
+                    return jsonify({'response': 'Login Successful!', 'login': True, 'token': token})
                 else:
                     return jsonify({'response': 'Login Unsuccessful!', 'login': False}), 401
             else:
@@ -45,7 +45,7 @@ class UserByEmail(Resource):
             return jsonify({'response': "Backend Error", 'login': False}), 500
 
 
-@app.route('/token', methods=["POST"])
+@app.route('/token', methods=["GET"])
 @jwt_required()
 def login():
     return jsonify({"response": "Token Authenticated"})
