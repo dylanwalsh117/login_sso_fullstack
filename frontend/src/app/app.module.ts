@@ -22,6 +22,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import {TokenInterceptor} from './token.interceptor';
+import {TokenGuard} from './token.guard';
 
 
 
@@ -59,7 +60,8 @@ import {TokenInterceptor} from './token.interceptor';
         provide: HTTP_INTERCEPTORS,
         useClass: TokenInterceptor,
         multi: true
-    }],
+    },
+    TokenGuard],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -25,10 +25,6 @@ export class HomeComponent implements OnInit {
               userAuth = response.login;
           });
 
-      // if (jwtToken == null ||  !userAuth){
-      //     this.router.navigate(['/login']).then();
-      // }
-
   }
 
 }
