@@ -5,26 +5,30 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {getToken} from 'codelyzer/angular/styles/cssLexer';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private userService: UserService,
-              private tokenService: TokenService,
-              private route: ActivatedRoute,
-              private router: Router) { }
+    constructor(private userService: UserService,
+                private tokenService: TokenService,
+                private route: ActivatedRoute,
+                private router: Router) { }
 
-  ngOnInit(): void {
-      const jwtToken = localStorage.getItem('token');
-      let userAuth = false;
+    ngOnInit(): void {
+        const jwtToken = localStorage.getItem('token');
+        let userAuth = false;
 
-      this.tokenService.validateToken(jwtToken).subscribe(
-          response => {
-              userAuth = response.login;
-          });
+        this.tokenService.validateToken(jwtToken).subscribe(
+            response => {
+                userAuth = response.login;
+            });
+    }
+    logOut(): void{
+        localStorage.clear();
+        this.router.navigateByUrl('/login');
 
-  }
+    }
 
 }
