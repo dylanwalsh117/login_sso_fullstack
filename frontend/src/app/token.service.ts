@@ -18,7 +18,9 @@ export class TokenService {
     }
 
     validateToken(token): Observable<any> {
-        return this.http.post('http://127.0.0.1:5000/token', token);
+        // const headers = { Authorization: `Bearer ${this.getToken()}`};
+
+        return this.http.get('http://127.0.0.1:5000/token');
 
     }
     public getToken(): string{

@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
             login = response.login;
             if (login === true) {
                 localStorage.setItem('token', response.token);
-                this.router.navigate(['/home']);
+                this.router.navigateByUrl('/home');
             } else {
                 console.log(response.response);
             }
