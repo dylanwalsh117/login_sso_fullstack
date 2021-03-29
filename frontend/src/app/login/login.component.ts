@@ -13,19 +13,19 @@ export class LoginComponent implements OnInit {
     angularForm: FormGroup;
 
 
-  constructor(
-      private router: Router,
-      private userService: UserService,
-      private tokenService: TokenService,
-      private route: ActivatedRoute
-  ) { }
+    constructor(
+        private router: Router,
+        private userService: UserService,
+        private tokenService: TokenService,
+        private route: ActivatedRoute
+    ) { }
 
-  ngOnInit(): void {
-      this.angularForm = new FormGroup({
-          email: new FormControl('', Validators.required),
-          password: new FormControl('', Validators.required)
-      });
-  }
+    ngOnInit(): void {
+        this.angularForm = new FormGroup({
+            email: new FormControl('', Validators.required),
+            password: new FormControl('', Validators.required)
+        });
+    }
     onSubmit(user): void {
         let login;
         this.userService.fetchUser(user).subscribe(response => {
@@ -39,4 +39,8 @@ export class LoginComponent implements OnInit {
             }
         });
     }
+    btnClick(link): void{
+        this.router.navigate([link]);
+    }
 }
+

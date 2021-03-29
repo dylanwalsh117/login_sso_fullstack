@@ -21,9 +21,11 @@ export class UserService {
         return this.http.post('http://localhost:5000/auth', user);
     }
 
-    addUser(user): Observable<any>{
+    addUser(user): void{
         console.log( {user});
-        return this.http.post('http://127.0.0.1:5000/user', user);
+        this.http.post('http://127.0.0.1:5000/user', user).subscribe(() => {
+            console.log('New User');
+        });
 
     }
 

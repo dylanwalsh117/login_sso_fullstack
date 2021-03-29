@@ -27,7 +27,7 @@ export class RegisterComponent implements OnInit {
     onSubmit(user): void {
         console.log(user);
         console.log(this.userService.addUser(user));
-        this.router.navigate(['/home']);
+        this.router.navigate(['/login']);
     }
 
 
