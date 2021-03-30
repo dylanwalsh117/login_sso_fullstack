@@ -1,6 +1,6 @@
 # login_sso_fullstack
 
-Full stack login application using Angular, Flask RESTPlus API and MongoDB. The porject includes some of the follwoing funtionality:
+### Full stack login application using Angular, Flask RESTPlus API and MongoDB. The porject includes some of the follwoing funtionality:
 
 * Password Encryption
 * Single Sign-ON (SSO)
@@ -9,7 +9,7 @@ Full stack login application using Angular, Flask RESTPlus API and MongoDB. The 
 * User Registration
 * Database Storage
 
-To run the project you will need to do the follwoing:
+### To run the project you will need to do the follwoing:
 
 1. Create MongoDB database.
 2. Ensure database name matches name in config.py
