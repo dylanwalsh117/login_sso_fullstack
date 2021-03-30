@@ -16,5 +16,5 @@ To run the project you will need to do the follwoing:
 3. Create or Clone "backend" and install dependencies using `pip freeze > requirements.txt` 
 4. Run API through Flask backend using `flask run`
 5. If creating new angular project use `ng new <name>`
-6. If cloning repo ensure packages are instaledd using `npm install`
-7. Rung frontend using `ng serve`
+6. If cloning repo ensure packages are installed using `npm install`
+7. Run frontend using `ng serve`
