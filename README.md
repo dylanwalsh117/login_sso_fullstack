@@ -2,12 +2,12 @@
 
 Full stack login application using Angular, Flask RESTPlus API and MongoDB. The porject includes some of the follwoing funtionality:
 
-*Password Encryption
-*Single Sign-ON (SSO)
-*Authentication using JWT
-*Login and Log Out
-*User Registration
-*Database Storage
+* Password Encryption
+* Single Sign-ON (SSO)
+* Authentication using JWT
+* Login and Log Out
+* User Registration
+* Database Storage
 
 To run the project you will need to do the follwoing:
 
