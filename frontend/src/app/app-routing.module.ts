@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import {HomeComponent} from './home/home.component';
 import {RegisterComponent} from './register/register.component';
-import {TokenGuard} from './token.guard';
+import {TokenGuard} from './auth/token.guard';
 
 const routes: Routes = [
     // Assigning certain components to routes

@@ -22,8 +22,8 @@ import { HomeComponent } from './home/home.component';
 import {AppRoutingModule} from './app-routing.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
-import {TokenInterceptor} from './token.interceptor';
-import {TokenGuard} from './token.guard';
+import {TokenInterceptor} from './auth/token.interceptor';
+import {TokenGuard} from './auth/token.guard';
 
 
 
