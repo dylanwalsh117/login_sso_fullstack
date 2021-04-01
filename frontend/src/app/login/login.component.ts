@@ -12,7 +12,7 @@ import {TokenService} from '../token.service';
 export class LoginComponent implements OnInit {
     angularForm: FormGroup;
 
-
+    // Creating required instances
     constructor(
         private router: Router,
         private userService: UserService,
@@ -26,11 +26,20 @@ export class LoginComponent implements OnInit {
             password: new FormControl('', Validators.required)
         });
     }
+
+    /**
+     * Validating user login.
+     * @param user: object
+     */
     onSubmit(user): void {
+        // Creating boolean for login.
         let login;
+        // calling method from userService
         this.userService.fetchUser(user).subscribe(response => {
             console.log(response);
             login = response.login;
+
+            // if statement to check login
             if (login === true) {
                 localStorage.setItem('token', response.token);
                 this.router.navigateByUrl('/home');
@@ -39,6 +48,11 @@ export class LoginComponent implements OnInit {
             }
         });
     }
+
+    /**
+     * Method to re-route user when successfully logged in.
+     * @param link: string
+     */
     btnClick(link): void{
         this.router.navigate([link]);
     }

@@ -7,8 +7,11 @@ import {RegisterComponent} from './register/register.component';
 import {TokenGuard} from './token.guard';
 
 const routes: Routes = [
+    // Assigning certain components to routes
+    // Making login the default route
     {path: '', redirectTo: '/login', pathMatch: 'full'},
     { path: 'login', component: LoginComponent },
+    // canActivate called from token.guard
     {path: 'home', component: HomeComponent, canActivate: [TokenGuard] },
     {path: 'register', component: RegisterComponent}
 ];
@@ -16,10 +19,11 @@ const routes: Routes = [
 @NgModule({
     declarations: [],
     imports: [
-        RouterModule.forRoot(routes),
+        // Importing routes module
         RouterModule.forRoot(routes)
     ],
     exports: [
+        // Exporting router module
         RouterModule
     ]
 })

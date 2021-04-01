@@ -16,6 +16,8 @@ export class RegisterComponent implements OnInit {
       private userService: UserService
   ) { }
 
+
+    // Adding validation to form.
     // tslint:disable-next-line:typedef
     ngOnInit() {
         this.addForm = new FormGroup({
@@ -24,6 +26,11 @@ export class RegisterComponent implements OnInit {
 
         });
     }
+
+    /**
+     * Registering user and when registered redirect to login
+     * @param user: object
+     */
     onSubmit(user): void {
         console.log(user);
         console.log(this.userService.addUser(user));

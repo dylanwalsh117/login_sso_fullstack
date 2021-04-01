@@ -4,6 +4,7 @@ import {TokenService} from '../token.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {getToken} from 'codelyzer/angular/styles/cssLexer';
 
+
 @Component({
     selector: 'app-home',
     templateUrl: './home.component.html',
@@ -11,6 +12,7 @@ import {getToken} from 'codelyzer/angular/styles/cssLexer';
 })
 export class HomeComponent implements OnInit {
 
+    // Creating required classes.
     constructor(private userService: UserService,
                 private tokenService: TokenService,
                 private route: ActivatedRoute,
@@ -25,6 +27,10 @@ export class HomeComponent implements OnInit {
                 userAuth = response.login;
             });
     }
+
+    /**
+     *  Clears everything from localStorage which will log out user.
+     */
     logOut(): void{
         localStorage.clear();
         this.router.navigateByUrl('/login');

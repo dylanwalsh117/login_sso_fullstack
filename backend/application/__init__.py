@@ -7,15 +7,23 @@ from flask_bcrypt import Bcrypt
 from flask_jwt_extended import JWTManager, jwt_required, create_access_token
 
 
+# Declaring flask application
 app = Flask(__name__)
-app.config.from_object(Config)
+# Passing config file
+app.config.from_object(Config) # I
+# Declaring rest plus api
 api = Api(app=app, doc="/", title="Api_CRUD-APP")
 CORS(app)
+# Creating instance of bcrypt
 bcrypt = Bcrypt(app)
+# Creating instance of JWT
 jwt = JWTManager(app)
+# Creating instance of MongoEngine
 db = MongoEngine(app=app)
 
+# Importing declared routes from routes.py
 from application import routes
+
 
 if __name__ == '__main__':
     app.run()

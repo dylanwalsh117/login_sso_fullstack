@@ -1,3 +1,4 @@
+// importing required modules
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
@@ -26,9 +27,8 @@ import {TokenGuard} from './token.guard';
 
 
 
-
-
 @NgModule({
+    // Declaring components
     declarations: [
         AppComponent,
         LoginComponent,
@@ -36,6 +36,7 @@ import {TokenGuard} from './token.guard';
         RegisterComponent
     ],
     imports: [
+        // Importing modules
         BrowserAnimationsModule,
         BrowserModule,
         MatToolbarModule,
@@ -57,10 +58,12 @@ import {TokenGuard} from './token.guard';
         ReactiveFormsModule
     ],
     providers: [{
+        // Providing Interceptor
         provide: HTTP_INTERCEPTORS,
         useClass: TokenInterceptor,
         multi: true
     },
+    // Providing TokenGuard
     TokenGuard],
     bootstrap: [AppComponent]
 })
