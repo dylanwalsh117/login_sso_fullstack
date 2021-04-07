@@ -13,7 +13,8 @@ from flask_jwt_extended import JWTManager, jwt_required, create_access_token
     Class to create required routes for API
 """
 
-@api.route('/user', '/user/')
+
+@api.route('/user')
 class UserAll(Resource):
     def get(self):
         """
@@ -33,8 +34,11 @@ class UserAll(Resource):
         # Declaring variable for api payload
         data = api.payload
 
-        # Using bcrypt to encrypt password
-        data['password'] = bcrypt.generate_password_hash(data['password'])
+        try:
+            # Using bcrypt to encrypt password
+            data['password'] = bcrypt.generate_password_hash(data['password'])
+        except TypeError:
+            return "Password must be a string"
         # Creating new user using data variable
         User(email=data['email'], password=data['password']).save()
 
