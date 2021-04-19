@@ -50,11 +50,9 @@ class UserByEmail(Resource):
         Method to see if login was successful or not and returns a boolean.
         :return: Boolean
         """
-        data = api.payload
         try:
+            data = api.payload
             if User.objects(email=data['email']):
-                data = api.payload
-
                 # Compares password with encrypted password in db
                 if bcrypt.check_password_hash(User.objects(email=data['email'])[0].password, data['password']):
                     # if the password matches a token will be created for user

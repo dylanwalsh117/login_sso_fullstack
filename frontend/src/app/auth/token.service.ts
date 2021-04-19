@@ -7,7 +7,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
  * Class containing methods for JWT authentication
  */
 
-const httpOptions = {
+export const httpOptions = {
     headers: new HttpHeaders({
         'Content-Type': 'application/json'
     })
@@ -45,6 +45,9 @@ export class TokenService {
         // Check whether the token is expired and return
         // true or false
         return !this.jwtHelper.isTokenExpired(token);
+    }
+    getUsers(): Observable<any>{
+        return this.http.get('http://localhost:5000/user');
     }
 
 }

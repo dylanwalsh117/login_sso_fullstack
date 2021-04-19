@@ -32,11 +32,9 @@ export class UserService {
      * @param user: object
      * @return: observable
      */
-    addUser(user): void{
+    addUser(user): Observable<any>{
         console.log( {user});
-        this.http.post('http://127.0.0.1:5000/user', user).subscribe(() => {
-            console.log('New User');
-        });
+        return this.http.post('http://127.0.0.1:5000/user', user);
 
     }
 

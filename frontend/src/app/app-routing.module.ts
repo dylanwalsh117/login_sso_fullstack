@@ -6,7 +6,7 @@ import {HomeComponent} from './home/home.component';
 import {RegisterComponent} from './register/register.component';
 import {TokenGuard} from './auth/token.guard';
 
-const routes: Routes = [
+export const routes: Routes = [
     // Assigning certain components to routes
     // Making login the default route
     {path: '', redirectTo: '/login', pathMatch: 'full'},
